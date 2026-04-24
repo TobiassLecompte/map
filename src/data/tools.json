@@ -1,0 +1,66 @@
+{
+  "categories": [
+    { "id": "design", "name": "设计工具", "count": 76 },
+    { "id": "dev", "name": "开发工具", "count": 45 },
+    { "id": "ai", "name": "AI工具", "count": 128 },
+    { "id": "productivity", "name": "生产力", "count": 32 }
+  ],
+  "tools": [
+    {
+      "id": "1",
+      "name": "Figma",
+      "description": "基于浏览器的协作式 UI 设计工具。",
+      "categoryId": "design",
+      "url": "https://figma.com",
+      "icon": "figma"
+    },
+    {
+      "id": "2",
+      "name": "Sketch",
+      "description": "Mac 平台上的矢量绘图应用，非常适合 UI/UX 设计。",
+      "categoryId": "design",
+      "url": "https://sketch.com",
+      "icon": "sketch"
+    },
+    {
+      "id": "3",
+      "name": "Adobe XD",
+      "description": "Adobe 出品的原型设计与协作工具。",
+      "categoryId": "design",
+      "url": "https://adobe.com/products/xd.html",
+      "icon": "adobe"
+    },
+    {
+      "id": "4",
+      "name": "Next.js",
+      "description": "用于构建高性能 Web 应用程序的 React 框架。",
+      "categoryId": "dev",
+      "url": "https://nextjs.org",
+      "icon": "nextjs"
+    },
+    {
+      "id": "5",
+      "name": "Tailwind CSS",
+      "description": "一个功能类优先的 CSS 框架，用于快速构建定制的用户界面。",
+      "categoryId": "dev",
+      "url": "https://tailwindcss.com",
+      "icon": "tailwind"
+    },
+    {
+      "id": "6",
+      "name": "ChatGPT",
+      "description": "OpenAI 训练的大型语言模型，可以进行自然的对话。",
+      "categoryId": "ai",
+      "url": "https://chat.openai.com",
+      "icon": "openai"
+    },
+    {
+      "id": "7",
+      "name": "Notion",
+      "description": "提供笔记、任务、数据库和日历功能的一体化工作区。",
+      "categoryId": "productivity",
+      "url": "https://notion.so",
+      "icon": "notion"
+    }
+  ]
+}
