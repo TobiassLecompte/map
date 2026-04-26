@@ -1,6 +1,6 @@
 {
   "categories": [
-    { "id": "design", "name": "设计工具", "count": 76 },
+    { "id": "design", "name": "设计工具", "count": 77 },
     { "id": "dev", "name": "开发工具", "count": 45 },
     { "id": "ai", "name": "AI工具", "count": 128 },
     { "id": "productivity", "name": "生产力", "count": 32 }
@@ -61,6 +61,14 @@
       "categoryId": "productivity",
       "url": "https://notion.so",
       "icon": "notion"
+    },
+    {
+      "id": "8",
+      "name": "ColorHexa",
+      "description": "专业的色彩百科全书，提供颜色转换、代码及调色板生成等功能。",
+      "categoryId": "design",
+      "url": "https://www.colorhexa.com/",
+      "icon": "colorhexa"
     }
   ]
 }

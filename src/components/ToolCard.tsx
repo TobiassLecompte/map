@@ -27,6 +27,7 @@ const iconMap: Record<string, string> = {
   tailwind: "logos:tailwindcss-icon",
   openai: "logos:openai-icon",
   notion: "logos:notion-icon",
+  colorhexa: "noto:artist-palette",
 };
 
 export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
