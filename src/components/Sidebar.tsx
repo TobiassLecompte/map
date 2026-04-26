@@ -45,8 +45,8 @@ export function Sidebar({ activeCategory, onSelectCategory, isOpen, onClose }: S
             <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-bold">
               <Compass size={20} />
             </div>
-            <h1 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">
-              LARKMAP
+            <h1 className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Inspire Station
             </h1>
           </div>
           {/* Close button for mobile */}
