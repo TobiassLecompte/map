@@ -20,13 +20,58 @@ interface ToolCardProps {
 
 // Map local icon strings to Iconify icon names for better logos
 const iconMap: Record<string, string> = {
+  // Design
   figma: "logos:figma",
+  pixso: "logos:pixso",
+  modao: "mingcute:layout-line",
   sketch: "logos:sketch",
   adobe: "logos:adobe-xd",
+  uizard: "logos:uizard-icon",
+  uxbot: "logos:uxbot",
+  framer: "logos:framer",
+  
+  // Dev
   nextjs: "logos:nextjs-icon",
   tailwind: "logos:tailwindcss-icon",
+  vscode: "logos:visual-studio-code",
+  cursor: "simple-icons:cursor",
+  github: "logos:github-icon",
+  trae: "simple-icons:bytedance",
+  codeium: "logos:codeium",
+  tabnine: "logos:tabnine",
+  claude: "logos:claude",
+  replit: "logos:replit-icon",
+  postman: "logos:postman-icon",
+  docker: "logos:docker-icon",
+  supabase: "logos:supabase-icon",
+  langchain: "simple-icons:langchain",
+  jetbrains: "logos:jetbrains-icon",
+  
+  // AI
   openai: "logos:openai-icon",
+  anthropic: "logos:anthropic-icon",
+  google: "logos:google-icon",
+  midjourney: "simple-icons:midjourney",
+  stability: "simple-icons:stabilityai",
   notion: "logos:notion-icon",
+  gptnet: "simple-icons:openai",
+  perplexity: "simple-icons:perplexity",
+  xai: "simple-icons:x",
+  runway: "simple-icons:runway",
+  suno: "simple-icons:suno",
+  
+  // Productivity
+  obsidian: "logos:obsidian-icon",
+  clickup: "logos:clickup-icon",
+  asana: "logos:asana-icon",
+  monday: "logos:monday-icon",
+  todoist: "logos:todoist-icon",
+  trello: "logos:trello",
+  slack: "logos:slack-icon",
+  worktile: "simple-icons:worktile",
+  feishu: "simple-icons:lark",
+  linear: "logos:linear-icon",
+  nuclino: "simple-icons:nuclino",
   colorhexa: "noto:artist-palette",
 };
 

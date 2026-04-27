@@ -1,15 +1,31 @@
 {
   "categories": [
-    { "id": "design", "name": "设计工具", "count": 77 },
-    { "id": "dev", "name": "开发工具", "count": 45 },
-    { "id": "ai", "name": "AI工具", "count": 128 },
-    { "id": "productivity", "name": "生产力", "count": 32 }
+    {
+      "id": "design",
+      "name": "设计工具",
+      "count": 9
+    },
+    {
+      "id": "dev",
+      "name": "开发工具",
+      "count": 16
+    },
+    {
+      "id": "ai",
+      "name": "AI工具",
+      "count": 12
+    },
+    {
+      "id": "productivity",
+      "name": "生产力",
+      "count": 12
+    }
   ],
   "tools": [
     {
       "id": "1",
       "name": "Figma",
-      "description": "基于浏览器的协作式 UI 设计工具。",
+      "description": "行业首选UI设计工具，支持多人实时协作",
       "categoryId": "design",
       "url": "https://figma.com",
       "icon": "figma"
@@ -17,17 +33,17 @@
     {
       "id": "2",
       "name": "Sketch",
-      "description": "Mac 平台上的矢量绘图应用，非常适合 UI/UX 设计。",
+      "description": "macOS独占的专业矢量UI设计工具",
       "categoryId": "design",
-      "url": "https://sketch.com",
+      "url": "https://www.sketch.com",
       "icon": "sketch"
     },
     {
       "id": "3",
       "name": "Adobe XD",
-      "description": "Adobe 出品的原型设计与协作工具。",
+      "description": "Adobe旗下UI/UX设计与原型工具",
       "categoryId": "design",
-      "url": "https://adobe.com/products/xd.html",
+      "url": "https://adobe.com/products/xd",
       "icon": "adobe"
     },
     {
@@ -49,7 +65,7 @@
     {
       "id": "6",
       "name": "ChatGPT",
-      "description": "OpenAI 训练的大型语言模型，可以进行自然的对话。",
+      "description": "OpenAI最强通用人工智能助手",
       "categoryId": "ai",
       "url": "https://chat.openai.com",
       "icon": "openai"
@@ -57,9 +73,9 @@
     {
       "id": "7",
       "name": "Notion",
-      "description": "提供笔记、任务、数据库和日历功能的一体化工作区。",
+      "description": "协作笔记与知识管理系统",
       "categoryId": "productivity",
-      "url": "https://notion.so",
+      "url": "https://www.notion.so",
       "icon": "notion"
     },
     {
@@ -69,6 +85,334 @@
       "categoryId": "design",
       "url": "https://www.colorhexa.com/",
       "icon": "colorhexa"
+    },
+    {
+      "id": "9",
+      "name": "Pixso",
+      "description": "国产对标Figma的云协作设计工具",
+      "url": "https://pixso.cn",
+      "categoryId": "design",
+      "icon": "pixso"
+    },
+    {
+      "id": "10",
+      "name": "墨刀设计",
+      "description": "国产原型设计工具，产品、设计、交付一体",
+      "url": "https://modao.cc",
+      "categoryId": "design",
+      "icon": "modao"
+    },
+    {
+      "id": "11",
+      "name": "Uizard",
+      "description": "AI驱动的快速UI设计工具，支持草图转界面",
+      "url": "https://uizard.io",
+      "categoryId": "design",
+      "icon": "uizard"
+    },
+    {
+      "id": "12",
+      "name": "UXbot",
+      "description": "AI生成完整多页面应用，输出原生移动端代码",
+      "url": "https://uxbot.cn",
+      "categoryId": "design",
+      "icon": "uxbot"
+    },
+    {
+      "id": "13",
+      "name": "Framer AI",
+      "description": "AI网站设计与发布平台",
+      "url": "https://framer.com",
+      "categoryId": "design",
+      "icon": "framer"
+    },
+    {
+      "id": "14",
+      "name": "VS Code",
+      "description": "全球最流行的代码编辑器，生态丰富",
+      "url": "https://code.visualstudio.com",
+      "categoryId": "dev",
+      "icon": "vscode"
+    },
+    {
+      "id": "15",
+      "name": "Cursor",
+      "description": "基于VS Code的AI代码编辑器",
+      "url": "https://cursor.sh",
+      "categoryId": "dev",
+      "icon": "cursor"
+    },
+    {
+      "id": "16",
+      "name": "GitHub Copilot",
+      "description": "微软+OpenAI的AI代码补全助手",
+      "url": "https://github.com/features/copilot",
+      "categoryId": "dev",
+      "icon": "github"
+    },
+    {
+      "id": "17",
+      "name": "Trae",
+      "description": "字节跳动AI原生IDE，支持全流程自动化",
+      "url": "https://trae.ai",
+      "categoryId": "dev",
+      "icon": "trae"
+    },
+    {
+      "id": "18",
+      "name": "Windsurf",
+      "description": "全球首个Agentic IDE，Cascade智能体",
+      "url": "https://codeium.com/windsurf",
+      "categoryId": "dev",
+      "icon": "codeium"
+    },
+    {
+      "id": "19",
+      "name": "Tabnine",
+      "description": "企业级安全优先的AI代码补全",
+      "url": "https://tabnine.com",
+      "categoryId": "dev",
+      "icon": "tabnine"
+    },
+    {
+      "id": "20",
+      "name": "Claude Code",
+      "description": "命令行AI编程工具，超大上下文",
+      "url": "https://claude.ai/code",
+      "categoryId": "dev",
+      "icon": "claude"
+    },
+    {
+      "id": "21",
+      "name": "Replit",
+      "description": "浏览器内编程的云端IDE",
+      "url": "https://replit.com",
+      "categoryId": "dev",
+      "icon": "replit"
+    },
+    {
+      "id": "22",
+      "name": "Postman",
+      "description": "API调试与测试工具",
+      "url": "https://postman.com",
+      "categoryId": "dev",
+      "icon": "postman"
+    },
+    {
+      "id": "23",
+      "name": "GitHub",
+      "description": "全球最大代码托管与协作平台",
+      "url": "https://github.com",
+      "categoryId": "dev",
+      "icon": "github"
+    },
+    {
+      "id": "24",
+      "name": "Docker",
+      "description": "容器化平台，应用打包与部署",
+      "url": "https://www.docker.com",
+      "categoryId": "dev",
+      "icon": "docker"
+    },
+    {
+      "id": "25",
+      "name": "Supabase",
+      "description": "开源Firebase替代，后端即服务",
+      "url": "https://supabase.com",
+      "categoryId": "dev",
+      "icon": "supabase"
+    },
+    {
+      "id": "26",
+      "name": "LangChain",
+      "description": "LLM应用开发框架，RAG与Agent",
+      "url": "https://www.langchain.com",
+      "categoryId": "dev",
+      "icon": "langchain"
+    },
+    {
+      "id": "27",
+      "name": "JetBrains WebStorm",
+      "description": "专业JavaScript/TypeScript IDE",
+      "url": "https://www.jetbrains.com/webstorm",
+      "categoryId": "dev",
+      "icon": "jetbrains"
+    },
+    {
+      "id": "28",
+      "name": "Claude",
+      "description": "Anthropic推理能力强的大模型助手",
+      "url": "https://claude.ai",
+      "categoryId": "ai",
+      "icon": "anthropic"
+    },
+    {
+      "id": "29",
+      "name": "Gemini",
+      "description": "Google多模态AI助手，超大上下文",
+      "url": "https://gemini.google.com",
+      "categoryId": "ai",
+      "icon": "google"
+    },
+    {
+      "id": "30",
+      "name": "Midjourney",
+      "description": "AI图像生成工具",
+      "url": "https://www.midjourney.com",
+      "categoryId": "ai",
+      "icon": "midjourney"
+    },
+    {
+      "id": "31",
+      "name": "DALL-E",
+      "description": "OpenAI图像生成模型",
+      "url": "https://openai.com/dall-e",
+      "categoryId": "ai",
+      "icon": "openai"
+    },
+    {
+      "id": "32",
+      "name": "Stable Diffusion",
+      "description": "开源AI图像生成模型",
+      "url": "https://stability.ai",
+      "categoryId": "ai",
+      "icon": "stability"
+    },
+    {
+      "id": "33",
+      "name": "Notion AI",
+      "description": "笔记与知识库的AI助手",
+      "url": "https://www.notion.so",
+      "categoryId": "ai",
+      "icon": "notion"
+    },
+    {
+      "id": "34",
+      "name": "GPTNET",
+      "description": "全能AI平台，集成对话/绘图/视频",
+      "url": "https://www.gptnet.org",
+      "categoryId": "ai",
+      "icon": "gptnet"
+    },
+    {
+      "id": "35",
+      "name": "Perplexity",
+      "description": "AI驱动的智能搜索引擎",
+      "url": "https://www.perplexity.ai",
+      "categoryId": "ai",
+      "icon": "perplexity"
+    },
+    {
+      "id": "36",
+      "name": "Grok",
+      "description": "xAI推出的AI助手",
+      "url": "https://x.ai/grok",
+      "categoryId": "ai",
+      "icon": "xai"
+    },
+    {
+      "id": "37",
+      "name": "Runway",
+      "description": "AI视频生成与编辑平台",
+      "url": "https://runwayml.com",
+      "categoryId": "ai",
+      "icon": "runway"
+    },
+    {
+      "id": "38",
+      "name": "Suno",
+      "description": "AI音乐生成平台",
+      "url": "https://suno.ai",
+      "categoryId": "ai",
+      "icon": "suno"
+    },
+    {
+      "id": "39",
+      "name": "Obsidian",
+      "description": "本地优先的Markdown笔记软件",
+      "url": "https://obsidian.md",
+      "categoryId": "productivity",
+      "icon": "obsidian"
+    },
+    {
+      "id": "40",
+      "name": "ClickUp",
+      "description": "全能项目管理与协作平台",
+      "url": "https://clickup.com",
+      "categoryId": "productivity",
+      "icon": "clickup"
+    },
+    {
+      "id": "41",
+      "name": "Asana",
+      "description": "团队项目追踪与管理工具",
+      "url": "https://asana.com",
+      "categoryId": "productivity",
+      "icon": "asana"
+    },
+    {
+      "id": "42",
+      "name": "Monday.com",
+      "description": "可视化工作操作系统",
+      "url": "https://monday.com",
+      "categoryId": "productivity",
+      "icon": "monday"
+    },
+    {
+      "id": "43",
+      "name": "Todoist",
+      "description": "简洁高效的任务管理工具",
+      "url": "https://todoist.com",
+      "categoryId": "productivity",
+      "icon": "todoist"
+    },
+    {
+      "id": "44",
+      "name": "Trello",
+      "description": "看板式团队任务管理",
+      "url": "https://trello.com",
+      "categoryId": "productivity",
+      "icon": "trello"
+    },
+    {
+      "id": "45",
+      "name": "Slack",
+      "description": "团队协作与即时通讯平台",
+      "url": "https://slack.com",
+      "categoryId": "productivity",
+      "icon": "slack"
+    },
+    {
+      "id": "46",
+      "name": "Worktile",
+      "description": "国内高性价比团队管理软件",
+      "url": "https://worktile.com",
+      "categoryId": "productivity",
+      "icon": "worktile"
+    },
+    {
+      "id": "47",
+      "name": "飞书",
+      "description": "字节跳动企业协作平台",
+      "url": "https://feishu.cn",
+      "categoryId": "productivity",
+      "icon": "feishu"
+    },
+    {
+      "id": "48",
+      "name": "Linear",
+      "description": "开发者友好的项目管理工具",
+      "url": "https://linear.app",
+      "categoryId": "productivity",
+      "icon": "linear"
+    },
+    {
+      "id": "49",
+      "name": "Nuclino",
+      "description": "团队知识库与协作工具",
+      "url": "https://www.nuclino.com",
+      "categoryId": "productivity",
+      "icon": "nuclino"
     }
   ]
 }
