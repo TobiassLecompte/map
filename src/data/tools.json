@@ -6,6 +6,21 @@
       "count": 30
     },
     {
+      "id": "inspiration",
+      "name": "设计灵感",
+      "count": 20
+    },
+    {
+      "id": "resource",
+      "name": "设计资源",
+      "count": 37
+    },
+    {
+      "id": "community",
+      "name": "设计社区",
+      "count": 17
+    },
+    {
       "id": "dev",
       "name": "开发工具",
       "count": 16

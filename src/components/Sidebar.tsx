@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { Compass, User, PenTool, Layout, Monitor, Globe, Settings, Cpu, X } from "lucide-react";
+import { Compass, User, PenTool, Layout, Monitor, Globe, Settings, Cpu, X, Lightbulb, Package, Users } from "lucide-react";
 import data from "@/data/tools.json";
 import avatar from "@/app/avatar.png";
 
@@ -11,6 +11,9 @@ const categoryIcons: Record<string, React.ReactNode> = {
   dev: <Monitor size={18} />,
   ai: <Cpu size={18} />,
   productivity: <Layout size={18} />,
+  inspiration: <Lightbulb size={18} />,
+  resource: <Package size={18} />,
+  community: <Users size={18} />,
 };
 
 interface SidebarProps {

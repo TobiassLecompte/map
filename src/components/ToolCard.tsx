@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { Icon } from "@iconify/react";
@@ -16,6 +17,7 @@ interface Tool {
 interface ToolCardProps {
   tool: Tool;
   viewMode?: "grid" | "compact";
+  index?: number;
 }
 
 // Map local icon strings to Iconify icon names for better logos
@@ -75,8 +77,30 @@ const iconMap: Record<string, string> = {
   colorhexa: "noto:artist-palette",
 };
 
-export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
-  const iconName = iconMap[tool.icon] || "logos:javascript";
+// Cache favicon URLs to avoid recomputation
+const faviconCache = new Map<string, string | null>();
+function getFaviconUrl(url: string): string | null {
+  if (faviconCache.has(url)) return faviconCache.get(url)!;
+  try {
+    const domain = new URL(url).hostname;
+    const result = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    faviconCache.set(url, result);
+    return result;
+  } catch {
+    faviconCache.set(url, null);
+    return null;
+  }
+}
+
+export const ToolCard = memo(function ToolCard({ tool, viewMode = "grid", index = 0 }: ToolCardProps) {
+  // Determine icon strategy
+  const mappedIcon = iconMap[tool.icon];
+  const isDirectIconify = tool.icon && tool.icon.includes(":");
+  const iconName = mappedIcon || (isDirectIconify ? tool.icon : null);
+  const faviconUrl = !iconName ? getFaviconUrl(tool.url) : null;
+
+  // Stagger delay: cap at 20 items so later items don't wait forever
+  const staggerDelay = Math.min(index, 20) * 0.03;
 
   return (
     <motion.a
@@ -84,14 +108,11 @@ export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
       href={tool.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-indigo-500/30 dark:hover:border-indigo-400/30 transition-colors duration-300 ease-out flex overflow-hidden ${
+      className={`group relative bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-indigo-500/30 dark:hover:border-indigo-400/30 transition-all duration-300 ease-out flex overflow-hidden will-change-transform ${
         viewMode === "compact" ? "p-4 items-center gap-4" : "p-5 flex-col block"
       }`}
       whileHover={{ y: -4, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ layout: { duration: 0.3, type: "spring", bounce: 0.2 } }}
     >
       <div className={`absolute right-4 opacity-0 group-hover:opacity-100 transform transition-all duration-300 text-indigo-500 z-10 ${
         viewMode === "compact" 
@@ -101,34 +122,38 @@ export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
         <ExternalLink size={18} />
       </div>
       
-      <motion.div layout className={`${viewMode === "compact" ? "" : "flex items-start justify-between mb-4"}`}>
-        <motion.div 
-          layout 
-          className={`${viewMode === "compact" ? "w-10 h-10 text-xl" : "w-12 h-12 text-2xl"} rounded-xl bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center border border-slate-100 dark:border-slate-700/50 group-hover:scale-110 transition-colors duration-300 ease-out flex-shrink-0`}
+      <div className={`${viewMode === "compact" ? "" : "flex items-start justify-between mb-4"}`}>
+        <div 
+          className={`${viewMode === "compact" ? "w-10 h-10 text-xl" : "w-12 h-12 text-2xl"} rounded-xl bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center border border-slate-100 dark:border-slate-700/50 group-hover:scale-110 transition-transform duration-300 ease-out flex-shrink-0 overflow-hidden`}
         >
-          <Icon icon={iconName} />
-        </motion.div>
-      </motion.div>
-      
-      <motion.div layout className="flex-1 min-w-0 flex flex-col justify-center">
-        <motion.h3 layout className={`font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate ${viewMode === "compact" ? "text-base pr-6" : "text-lg mb-1 pr-6"}`}>
-          {tool.name}
-        </motion.h3>
-        <AnimatePresence initial={false}>
-          {viewMode !== "compact" && (
-            <motion.p 
-              layout
-              initial={{ opacity: 0, height: 0, marginTop: 0 }}
-              animate={{ opacity: 1, height: "auto", marginTop: 4 }}
-              exit={{ opacity: 0, height: 0, marginTop: 0 }}
-              transition={{ duration: 0.2 }}
-              className="text-sm text-slate-500 dark:text-slate-400 truncate leading-relaxed"
-            >
-              {tool.description}
-            </motion.p>
+          {iconName ? (
+            <Icon icon={iconName} />
+          ) : faviconUrl ? (
+            <img 
+              src={faviconUrl} 
+              alt={tool.name}
+              loading="lazy"
+              className="w-2/3 h-2/3 object-contain"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://api.iconify.design/lucide:globe.svg";
+              }}
+            />
+          ) : (
+            <Icon icon="lucide:globe" />
           )}
-        </AnimatePresence>
-      </motion.div>
+        </div>
+      </div>
+      
+      <div className="flex-1 min-w-0 flex flex-col justify-center">
+        <h3 className={`font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate ${viewMode === "compact" ? "text-base pr-6" : "text-lg mb-1 pr-6"}`}>
+          {tool.name}
+        </h3>
+        {viewMode !== "compact" && (
+          <p className="text-sm text-slate-500 dark:text-slate-400 truncate leading-relaxed">
+            {tool.description}
+          </p>
+        )}
+      </div>
     </motion.a>
   );
-}
+});
