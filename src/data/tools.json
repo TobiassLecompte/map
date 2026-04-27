@@ -3,7 +3,7 @@
     {
       "id": "design",
       "name": "设计工具",
-      "count": 9
+      "count": 30
     },
     {
       "id": "dev",
@@ -413,6 +413,766 @@
       "url": "https://www.nuclino.com",
       "categoryId": "productivity",
       "icon": "nuclino"
+    },
+    {
+      "id": "50",
+      "name": "Canva",
+      "description": "在线图形设计工具，适合快速产出",
+      "categoryId": "design",
+      "url": "https://www.canva.com",
+      "icon": "canva"
+    },
+    {
+      "id": "51",
+      "name": "Adobe Illustrator",
+      "description": "专业矢量图形设计软件",
+      "categoryId": "design",
+      "url": "https://adobe.com/products/illustrator",
+      "icon": "adobe"
+    },
+    {
+      "id": "52",
+      "name": "Affinity Designer",
+      "description": "专业矢量图形设计软件，Affinity套件",
+      "categoryId": "design",
+      "url": "https://affinity.serif.com/designer",
+      "icon": "affinity"
+    },
+    {
+      "id": "53",
+      "name": "Gravit Designer",
+      "description": "免费的在线矢量设计工具",
+      "categoryId": "design",
+      "url": "https://www.desygner.com/gravit-designer",
+      "icon": "gravit"
+    },
+    {
+      "id": "54",
+      "name": "Vectr",
+      "description": "免费简易的在线矢量编辑器",
+      "categoryId": "design",
+      "url": "https://vectr.com",
+      "icon": "vectr"
+    },
+    {
+      "id": "55",
+      "name": "Figma Make",
+      "description": "Figma原生AI生成UI界面功能",
+      "categoryId": "design",
+      "url": "https://www.figma.com/make",
+      "icon": "figma"
+    },
+    {
+      "id": "56",
+      "name": "Craft",
+      "description": "Figma插件，在线协作设计",
+      "categoryId": "design",
+      "url": "https://www.invisionapp.com/craft",
+      "icon": "craft"
+    },
+    {
+      "id": "57",
+      "name": "InVision Studio",
+      "description": "原型设计与交互动画工具",
+      "categoryId": "design",
+      "url": "https://www.invisionapp.com/studio",
+      "icon": "invision"
+    },
+    {
+      "id": "58",
+      "name": "ProtoPie",
+      "description": "高保真交互原型设计工具",
+      "categoryId": "design",
+      "url": "https://www.protopie.io",
+      "icon": "protopie"
+    },
+    {
+      "id": "59",
+      "name": "Principle",
+      "description": "macOS原型动画设计工具",
+      "categoryId": "design",
+      "url": "https://principleformac.com",
+      "icon": "principle"
+    },
+    {
+      "id": "60",
+      "name": "Lunacy",
+      "description": "Windows免费设计工具，Sketch文件兼容",
+      "categoryId": "design",
+      "url": "https://icons8.com/lunacy",
+      "icon": "lunacy"
+    },
+    {
+      "id": "61",
+      "name": "Adobe Photoshop",
+      "description": "业界标准图像编辑软件",
+      "categoryId": "design",
+      "url": "https://adobe.com/products/photoshop",
+      "icon": "photoshop"
+    },
+    {
+      "id": "62",
+      "name": "GIMP",
+      "description": "开源免费图像编辑工具",
+      "categoryId": "design",
+      "url": "https://www.gimp.org",
+      "icon": "gimp"
+    },
+    {
+      "id": "63",
+      "name": "SAI",
+      "description": "简单易用的绘画软件",
+      "categoryId": "design",
+      "url": "https://painttool.sai",
+      "icon": "sai"
+    },
+    {
+      "id": "64",
+      "name": "Clip Studio Paint",
+      "description": "专业漫画绘画软件",
+      "categoryId": "design",
+      "url": "https://www.clipstudio.net",
+      "icon": "clipstudiopaint"
+    },
+    {
+      "id": "65",
+      "name": "Procreate",
+      "description": "iPad专业绘画应用",
+      "categoryId": "design",
+      "url": "https://procreate.art",
+      "icon": "procreate"
+    },
+    {
+      "id": "66",
+      "name": "Blender",
+      "description": "开源3D建模与动画软件",
+      "categoryId": "design",
+      "url": "https://www.blender.org",
+      "icon": "blender"
+    },
+    {
+      "id": "67",
+      "name": "Cinema 4D",
+      "description": "专业3D建模渲染软件",
+      "categoryId": "design",
+      "url": "https://www.maxon.net/cinema-4d",
+      "icon": "cinema4d"
+    },
+    {
+      "id": "68",
+      "name": "Adobe After Effects",
+      "description": "专业视频特效与动态图形",
+      "categoryId": "design",
+      "url": "https://adobe.com/products/aftereffects",
+      "icon": "aftereffects"
+    },
+    {
+      "id": "69",
+      "name": "LottieFiles",
+      "description": "动画设计交付工具",
+      "categoryId": "design",
+      "url": "https://lottiefiles.com",
+      "icon": "lottie"
+    },
+    {
+      "id": "70",
+      "name": "Figma Sites",
+      "description": "Figma直接发布可访问网页",
+      "categoryId": "design",
+      "url": "https://www.figma.com/pages/sites",
+      "icon": "figma"
+    },
+    {
+      "id": "71",
+      "name": "Behance",
+      "description": "Adobe旗下全球最大创意作品展示平台",
+      "categoryId": "inspiration",
+      "url": "https://www.behance.net",
+      "icon": "behance"
+    },
+    {
+      "id": "72",
+      "name": "Dribbble",
+      "description": "设计师作品展示与灵感社区",
+      "categoryId": "inspiration",
+      "url": "https://dribbble.com",
+      "icon": "dribbble"
+    },
+    {
+      "id": "73",
+      "name": "Pinterest",
+      "description": "图片灵感收藏与发现平台",
+      "categoryId": "inspiration",
+      "url": "https://www.pinterest.com",
+      "icon": "pinterest"
+    },
+    {
+      "id": "74",
+      "name": "Awwwards",
+      "description": "网页设计奖项与优秀网站展示",
+      "categoryId": "inspiration",
+      "url": "https://www.awwwards.com",
+      "icon": "awwwards"
+    },
+    {
+      "id": "75",
+      "name": "Dribbble Showcases",
+      "description": "Dribbble精选作品合集",
+      "categoryId": "inspiration",
+      "url": "https://dribbble.com/Showcases",
+      "icon": "dribbble"
+    },
+    {
+      "id": "76",
+      "name": "Siteinspire",
+      "description": "网页设计灵感精选展示",
+      "categoryId": "inspiration",
+      "url": "https://www.siteinspire.com",
+      "icon": "siteinspire"
+    },
+    {
+      "id": "77",
+      "name": "One Page Love",
+      "description": "单页网站设计灵感收录",
+      "categoryId": "inspiration",
+      "url": "https://onepagelove.com",
+      "icon": "onepagelove"
+    },
+    {
+      "id": "78",
+      "name": "Minimal Gallery",
+      "description": "极简风格网站设计灵感",
+      "categoryId": "inspiration",
+      "url": "https://minimal.gallery",
+      "icon": "minimalgallery"
+    },
+    {
+      "id": "79",
+      "name": "Designspiration",
+      "description": "设计灵感图片搜索引擎",
+      "categoryId": "inspiration",
+      "url": "https://www.designspiration.com",
+      "icon": "designspiration"
+    },
+    {
+      "id": "80",
+      "name": "Niice",
+      "description": "设计师灵感搜索引擎",
+      "categoryId": "inspiration",
+      "url": "https://niice.co",
+      "icon": "niice"
+    },
+    {
+      "id": "81",
+      "name": "Muz.li",
+      "description": "设计师灵感浏览器插件",
+      "categoryId": "inspiration",
+      "url": "https://muz.li",
+      "icon": "Muzli"
+    },
+    {
+      "id": "82",
+      "name": "Land-book",
+      "description": "产品落地页设计灵感",
+      "categoryId": "inspiration",
+      "url": "https://land-book.com",
+      "icon": "landbook"
+    },
+    {
+      "id": "83",
+      "name": "UI Movement",
+      "description": "UI动效设计灵感",
+      "categoryId": "inspiration",
+      "url": "https://uimovement.com",
+      "icon": "uimovement"
+    },
+    {
+      "id": "84",
+      "name": "Collect UI",
+      "description": "UI设计日常灵感收集",
+      "categoryId": "inspiration",
+      "url": "https://collectui.com",
+      "icon": "collectui"
+    },
+    {
+      "id": "85",
+      "name": "Designer IO",
+      "description": "设计师作品展示平台",
+      "categoryId": "inspiration",
+      "url": "https://designer.io",
+      "icon": "designerio"
+    },
+    {
+      "id": "86",
+      "name": "Cargo",
+      "description": "设计师作品集网站搭建平台",
+      "categoryId": "inspiration",
+      "url": "https://cargo.site",
+      "icon": "cargo"
+    },
+    {
+      "id": "87",
+      "name": "Squarespace",
+      "description": "专业作品集网站搭建",
+      "categoryId": "inspiration",
+      "url": "https://www.squarespace.com",
+      "icon": "squarespace"
+    },
+    {
+      "id": "88",
+      "name": "Wix",
+      "description": "可视化网站搭建平台",
+      "categoryId": "inspiration",
+      "url": "https://www.wix.com",
+      "icon": "wix"
+    },
+    {
+      "id": "89",
+      "name": "Webflow",
+      "description": "专业网站设计与托管平台",
+      "categoryId": "inspiration",
+      "url": "https://webflow.com",
+      "icon": "webflow"
+    },
+    {
+      "id": "90",
+      "name": "Readymag",
+      "description": "杂志风格网站设计工具",
+      "categoryId": "inspiration",
+      "url": "https://readymag.com",
+      "icon": "readymag"
+    },
+    {
+      "id": "91",
+      "name": "Unsplash",
+      "description": "高质量免费高清图片素材",
+      "categoryId": "resource",
+      "url": "https://unsplash.com",
+      "icon": "unsplash"
+    },
+    {
+      "id": "92",
+      "name": "Pexels",
+      "description": "免费可商用图片与视频素材",
+      "categoryId": "resource",
+      "url": "https://www.pexels.com",
+      "icon": "pexels"
+    },
+    {
+      "id": "93",
+      "name": "Pixabay",
+      "description": "免费图片、视频、音乐素材库",
+      "categoryId": "resource",
+      "url": "https://pixabay.com",
+      "icon": "pixabay"
+    },
+    {
+      "id": "94",
+      "name": "Freepik",
+      "description": "免费矢量图、图标、插画素材",
+      "categoryId": "resource",
+      "url": "https://www.freepik.com",
+      "icon": "freepik"
+    },
+    {
+      "id": "95",
+      "name": "Flaticon",
+      "description": "超过800万免费图标资源",
+      "categoryId": "resource",
+      "url": "https://www.flaticon.com",
+      "icon": "flaticon"
+    },
+    {
+      "id": "96",
+      "name": "Icons8",
+      "description": "免费图标、插画、音效素材",
+      "categoryId": "resource",
+      "url": "https://icons8.com",
+      "icon": "icons8"
+    },
+    {
+      "id": "97",
+      "name": "Font Awesome",
+      "description": "知名免费图标字体库",
+      "categoryId": "resource",
+      "url": "https://fontawesome.com",
+      "icon": "fontawesome"
+    },
+    {
+      "id": "98",
+      "name": "Heroicons",
+      "description": "Tailwind团队出品的免费SVG图标",
+      "categoryId": "resource",
+      "url": "https://heroicons.com",
+      "icon": "heroicons"
+    },
+    {
+      "id": "99",
+      "name": "Lucide",
+      "description": "开源可定制SVG图标库",
+      "categoryId": "resource",
+      "url": "https://lucide.dev",
+      "icon": "lucide"
+    },
+    {
+      "id": "100",
+      "name": "Tabler Icons",
+      "description": "开源免费SVG图标集",
+      "categoryId": "resource",
+      "url": "https://tabler-icons.io",
+      "icon": "tabler"
+    },
+    {
+      "id": "101",
+      "name": "Google Fonts",
+      "description": "Google免费开源字体库",
+      "categoryId": "resource",
+      "url": "https://fonts.google.com",
+      "icon": "googlefonts"
+    },
+    {
+      "id": "102",
+      "name": "Adobe Fonts",
+      "description": "Adobe Creative Cloud字体服务",
+      "categoryId": "resource",
+      "url": "https://fonts.adobe.com",
+      "icon": "adobefonts"
+    },
+    {
+      "id": "103",
+      "name": "思源字体",
+      "description": "谷歌与Adobe开源中文字体",
+      "categoryId": "resource",
+      "url": "https://fonts.google.com/specimen/Source+Han+Sans",
+      "icon": "notosans"
+    },
+    {
+      "id": "104",
+      "name": "站酷字体",
+      "description": "站酷开源中文字体",
+      "categoryId": "resource",
+      "url": "https://www.zcool.com.cn",
+      "icon": "zcool"
+    },
+    {
+      "id": "105",
+      "name": "求字体网",
+      "description": "字体识别与下载",
+      "categoryId": "resource",
+      "url": "https://www.qiuziti.com",
+      "icon": "qiuziti"
+    },
+    {
+      "id": "106",
+      "name": "Adobe Color",
+      "description": "免费配色方案工具",
+      "categoryId": "resource",
+      "url": "https://color.adobe.com",
+      "icon": "adobecolor"
+    },
+    {
+      "id": "107",
+      "name": "Coolors",
+      "description": "快速生成配色方案",
+      "categoryId": "resource",
+      "url": "https://coolors.co",
+      "icon": "coolors"
+    },
+    {
+      "id": "108",
+      "name": "Color Hunt",
+      "description": "设计师配色灵感库",
+      "categoryId": "resource",
+      "url": "https://colorhunt.co",
+      "icon": "colorhunt"
+    },
+    {
+      "id": "109",
+      "name": "Web Gradients",
+      "description": "渐变色配色合集",
+      "categoryId": "resource",
+      "url": "https://webgradients.com",
+      "icon": "webgradients"
+    },
+    {
+      "id": "110",
+      "name": "uiGradients",
+      "description": "精美渐变色集合",
+      "categoryId": "resource",
+      "url": "https://uigradients.com",
+      "icon": "uigradients"
+    },
+    {
+      "id": "111",
+      "name": "Tintui",
+      "description": "UI配色灵感与组件",
+      "categoryId": "resource",
+      "url": "https://www.tintui.com",
+      "icon": "tintui"
+    },
+    {
+      "id": "112",
+      "name": "Material Design",
+      "description": "Google设计系统与组件库",
+      "categoryId": "resource",
+      "url": "https://m3.material.io",
+      "icon": "material"
+    },
+    {
+      "id": "113",
+      "name": "Ant Design",
+      "description": "蚂蚁金服企业级UI组件库",
+      "categoryId": "resource",
+      "url": "https://ant.design",
+      "icon": "antdesign"
+    },
+    {
+      "id": "114",
+      "name": "Shadcn/ui",
+      "description": "Tailwind CSS组件库",
+      "categoryId": "resource",
+      "url": "https://ui.shadcn.com",
+      "icon": "shadcn"
+    },
+    {
+      "id": "115",
+      "name": "Radix UI",
+      "description": "无样式可访问UI组件",
+      "categoryId": "resource",
+      "url": "https://www.radix-ui.com",
+      "icon": "radix"
+    },
+    {
+      "id": "116",
+      "name": "Headless UI",
+      "description": "Tailwind CSS无头组件",
+      "categoryId": "resource",
+      "url": "https://headlessui.com",
+      "icon": "headlessui"
+    },
+    {
+      "id": "117",
+      "name": "Chakra UI",
+      "description": "React组件库",
+      "categoryId": "resource",
+      "url": "https://chakra-ui.com",
+      "icon": "chakra"
+    },
+    {
+      "id": "118",
+      "name": "PrimeNG",
+      "description": "Angular UI组件库",
+      "categoryId": "resource",
+      "url": "https://www.primefaces.org/primeng",
+      "icon": "primeng"
+    },
+    {
+      "id": "119",
+      "name": "Bootstrap",
+      "description": "经典响应式前端框架",
+      "categoryId": "resource",
+      "url": "https://getbootstrap.com",
+      "icon": "bootstrap"
+    },
+    {
+      "id": "120",
+      "name": "Storybook",
+      "description": "UI组件开发与文档工具",
+      "categoryId": "resource",
+      "url": "https://storybook.js.org",
+      "icon": "storybook"
+    },
+    {
+      "id": "121",
+      "name": "Unsplash Source",
+      "description": "Unsplash图片API",
+      "categoryId": "resource",
+      "url": "https://source.unsplash.com",
+      "icon": "unsplash"
+    },
+    {
+      "id": "122",
+      "name": "Lorem Picsum",
+      "description": "占位图片生成服务",
+      "categoryId": "resource",
+      "url": "https://picsum.photos",
+      "icon": "picsum"
+    },
+    {
+      "id": "123",
+      "name": "Remove.bg",
+      "description": "AI自动去除图片背景",
+      "categoryId": "resource",
+      "url": "https://www.remove.bg",
+      "icon": "removebg"
+    },
+    {
+      "id": "124",
+      "name": "TinyPNG",
+      "description": "图片压缩与优化工具",
+      "categoryId": "resource",
+      "url": "https://tinypng.com",
+      "icon": "tinypng"
+    },
+    {
+      "id": "125",
+      "name": "Squoosh",
+      "description": "浏览器端图片压缩工具",
+      "categoryId": "resource",
+      "url": "https://squoosh.app",
+      "icon": "squoosh"
+    },
+    {
+      "id": "126",
+      "name": "Figma资源社区",
+      "description": "Figma社区免费设计资源",
+      "categoryId": "resource",
+      "url": "https://www.figma.com/community",
+      "icon": "figma"
+    },
+    {
+      "id": "127",
+      "name": "Sketch资源共享",
+      "description": "Sketch设计资源",
+      "categoryId": "resource",
+      "url": "https://www.sketch.com/resources",
+      "icon": "sketch"
+    },
+    {
+      "id": "128",
+      "name": "UI中国",
+      "description": "国内UI设计师交流社区",
+      "categoryId": "community",
+      "url": "https://www.ui.cn",
+      "icon": "uicn"
+    },
+    {
+      "id": "129",
+      "name": "优设",
+      "description": "设计行业资讯与教程平台",
+      "categoryId": "community",
+      "url": "https://www.uisdc.com",
+      "icon": "uisdc"
+    },
+    {
+      "id": "130",
+      "name": "致设计",
+      "description": "电商设计创意社区",
+      "categoryId": "community",
+      "url": "https://www.zhisheji.com",
+      "icon": "zhisheji"
+    },
+    {
+      "id": "131",
+      "name": "设计号",
+      "description": "设计师学习交流平台",
+      "categoryId": "community",
+      "url": "https://www.shejihao.com",
+      "icon": "shejihao"
+    },
+    {
+      "id": "132",
+      "name": "Codrops",
+      "description": "前沿UI/UX设计与开发教程",
+      "categoryId": "community",
+      "url": "https://tympanus.net/codrops",
+      "icon": "codrops"
+    },
+    {
+      "id": "133",
+      "name": "Smashing Magazine",
+      "description": "网页设计与开发专业媒体",
+      "categoryId": "community",
+      "url": "https://www.smashingmagazine.com",
+      "icon": "smashing"
+    },
+    {
+      "id": "134",
+      "name": "A List Apart",
+      "description": "网页标准与最佳实践",
+      "categoryId": "community",
+      "url": "https://alistapart.com",
+      "icon": "alistapart"
+    },
+    {
+      "id": "135",
+      "name": "CSS-Tricks",
+      "description": "CSS技术教程与技巧",
+      "categoryId": "community",
+      "url": "https://css-tricks.com",
+      "icon": "csstricks"
+    },
+    {
+      "id": "136",
+      "name": "Medium Design",
+      "description": "Medium设计专栏",
+      "categoryId": "community",
+      "url": "https://medium.com/topic/design",
+      "icon": "medium"
+    },
+    {
+      "id": "137",
+      "name": "腾讯CDC",
+      "description": "腾讯用户研究与体验设计",
+      "categoryId": "community",
+      "url": "https://cdc.tencent.com",
+      "icon": "tencentcdc"
+    },
+    {
+      "id": "138",
+      "name": "阿里巴巴体验设计",
+      "description": "阿里UED设计团队博客",
+      "categoryId": "community",
+      "url": "https://www.aliued.com",
+      "icon": "aliued"
+    },
+    {
+      "id": "139",
+      "name": "网易云体验设计",
+      "description": "网易用户体验设计团队",
+      "categoryId": "community",
+      "url": "https://fe.iconfont.cn",
+      "icon": "wyyx"
+    },
+    {
+      "id": "140",
+      "name": "学UI网",
+      "description": "UI设计在线学习平台",
+      "categoryId": "community",
+      "url": "https://www.xueui.cn",
+      "icon": "xueui"
+    },
+    {
+      "id": "141",
+      "name": "虎课网",
+      "description": "设计创意在线学习平台",
+      "categoryId": "community",
+      "url": "https://www.huke88.com",
+      "icon": "huke"
+    },
+    {
+      "id": "142",
+      "name": "蓝湖",
+      "description": "设计协作与交付平台",
+      "categoryId": "community",
+      "url": "https://lanhuapp.com",
+      "icon": "lanhu"
+    },
+    {
+      "id": "143",
+      "name": "即刻",
+      "description": "设计师垂直社区",
+      "categoryId": "community",
+      "url": "https://web.okjike.com",
+      "icon": "jike"
+    },
+    {
+      "id": "144",
+      "name": "小红书设计",
+      "description": "小红书设计团队博客",
+      "categoryId": "community",
+      "url": "https://www.xiaohongshu.com",
+      "icon": "xiaohongshu"
     }
   ]
 }
