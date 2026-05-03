@@ -1,8 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
-import { Compass, User, PenTool, Layout, Monitor, Globe, Settings, Cpu, X, Lightbulb, Package, Users } from "lucide-react";
+import { Compass, User, PenTool, Layout, Monitor, Globe, Settings, Cpu, X, Lightbulb, Layers, Users } from "lucide-react";
 import data from "@/data/tools.json";
 import avatar from "@/app/avatar.png";
 
@@ -12,7 +11,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   ai: <Cpu size={18} />,
   productivity: <Layout size={18} />,
   inspiration: <Lightbulb size={18} />,
-  resource: <Package size={18} />,
+  resource: <Layers size={18} />,
   community: <Users size={18} />,
 };
 
@@ -27,17 +26,12 @@ export function Sidebar({ activeCategory, onSelectCategory, isOpen, onClose }: S
   return (
     <>
       {/* Mobile Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[60] md:hidden"
-          />
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div
+          onClick={onClose}
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[60] md:hidden transition-opacity"
+        />
+      )}
 
       <aside className={cn(
         "fixed md:sticky top-0 left-0 h-full w-64 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border-r border-slate-200 dark:border-slate-700 flex flex-col pt-6 flex-shrink-0 z-[70] transition-transform duration-300 ease-in-out md:translate-x-0",
@@ -75,11 +69,8 @@ export function Sidebar({ activeCategory, onSelectCategory, isOpen, onClose }: S
             )}
           >
             {activeCategory === "all" && (
-              <motion.div
-                layoutId="active-nav"
+              <div
                 className="absolute inset-0 bg-indigo-50 dark:bg-indigo-500/10 rounded-lg"
-                initial={false}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}
             <span className="relative z-10 flex items-center gap-3">
@@ -89,35 +80,57 @@ export function Sidebar({ activeCategory, onSelectCategory, isOpen, onClose }: S
           </button>
 
           {data.categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => {
-                onSelectCategory(category.id);
-                onClose?.();
-              }}
-              className={cn(
-                "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors relative",
-                activeCategory === category.id
-                  ? "text-indigo-600 dark:text-indigo-400"
-                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50"
-              )}
-            >
-              {activeCategory === category.id && (
-                <motion.div
-                  layoutId="active-nav"
-                  className="absolute inset-0 bg-indigo-50 dark:bg-indigo-500/10 rounded-lg"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10 flex items-center gap-3 w-full">
-                {categoryIcons[category.id] || <Settings size={18} />}
-                <span className="flex-1 text-left">{category.name}</span>
-                <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">
-                  {data.tools.filter((t) => t.categoryId === category.id).length}
+            <div key={category.id} className="flex flex-col">
+              <button
+                onClick={() => {
+                  onSelectCategory(category.id);
+                  onClose?.();
+                }}
+                className={cn(
+                  "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors relative",
+                  activeCategory === category.id
+                    ? "text-indigo-600 dark:text-indigo-400"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                )}
+              >
+                {activeCategory === category.id && (
+                  <div
+                    className="absolute inset-0 bg-indigo-50 dark:bg-indigo-500/10 rounded-lg"
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-3 w-full">
+                  {categoryIcons[category.id] || <Settings size={18} />}
+                  <span className="flex-1 text-left">{category.name}</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">
+                    {category.count}
+                  </span>
                 </span>
-              </span>
-            </button>
+              </button>
+              
+              {/* Sub-menu for design tools */}
+              {category.id === "design" && activeCategory === "design" && (
+                <div className="flex flex-col ml-11 mt-1 mb-2 pl-3 border-l border-slate-200 dark:border-slate-700 space-y-1">
+                  {['设计灵感', '设计资源', '设计社区'].map((sub) => (
+                    <button
+                      key={sub}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const el = document.getElementById(sub);
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        if (window.innerWidth < 768) {
+                          onClose?.();
+                        }
+                      }}
+                      className="text-left py-1.5 text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    >
+                      {sub}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -141,3 +154,4 @@ export function Sidebar({ activeCategory, onSelectCategory, isOpen, onClose }: S
     </>
   );
 }
+

@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useMemo, useRef, useCallback } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { ToolCard } from "@/components/ToolCard";
 import { BackToTop } from "@/components/BackToTop";
 import data from "@/data/tools.json";
 import { DotPatternBackground } from "@/components/DotPatternBackground";
-import { motion, AnimatePresence } from "framer-motion";
+
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,25 +26,13 @@ export default function Home() {
     });
   }, [activeCategory, searchQuery]);
 
-  const handleSelectCategory = useCallback((id: string) => {
-    setActiveCategory(id);
-  }, []);
-
-  const handleCloseMenu = useCallback(() => {
-    setIsMobileMenuOpen(false);
-  }, []);
-
-  const handleOpenMenu = useCallback(() => {
-    setIsMobileMenuOpen(true);
-  }, []);
-
   return (
     <div className="flex h-[100dvh] bg-slate-50 dark:bg-[#0a0a0a] overflow-hidden selection:bg-indigo-500/30">
       <Sidebar
         activeCategory={activeCategory}
-        onSelectCategory={handleSelectCategory}
+        onSelectCategory={setActiveCategory}
         isOpen={isMobileMenuOpen}
-        onClose={handleCloseMenu}
+        onClose={() => setIsMobileMenuOpen(false)}
       />
       
       <main className="flex-1 flex flex-col min-w-0 h-full relative z-0">
@@ -58,7 +46,7 @@ export default function Home() {
           onSearchChange={setSearchQuery} 
           viewMode={viewMode}
           onViewModeChange={setViewMode}
-          onMenuToggle={handleOpenMenu}
+          onMenuToggle={() => setIsMobileMenuOpen(true)}
         />
         
         <div ref={scrollContainerRef} className="flex-1 overflow-y-auto px-4 md:px-8 pb-12 pt-4 scroll-smooth">
@@ -75,26 +63,13 @@ export default function Home() {
                     : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
                 }`}
               >
-                <AnimatePresence mode="popLayout">
                   {data.tools
                     .filter((tool) => ["figma", "notion", "colorhexa"].includes(tool.name.toLowerCase()))
-                    .map((tool, i) => (
-                      <motion.div
-                        key={`fav-${tool.id}`}
-                        layout
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ 
-                          duration: 0.2,
-                          delay: i * 0.05,
-                          layout: { type: "spring", stiffness: 300, damping: 30 }
-                        }}
-                      >
-                        <ToolCard tool={tool} viewMode={viewMode} index={i} />
-                      </motion.div>
+                    .map((tool) => (
+                      <div key={`fav-${tool.id}`}>
+                        <ToolCard tool={tool} viewMode={viewMode} />
+                      </div>
                   ))}
-                </AnimatePresence>
               </div>
             </div>
           )}
@@ -111,32 +86,54 @@ export default function Home() {
           </div>
 
           {filteredTools.length > 0 ? (
-            <div 
-              className={`grid gap-4 md:gap-6 ${
-                viewMode === "grid"
-                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
-              }`}
-            >
-              <AnimatePresence mode="popLayout" initial={false}>
-                {filteredTools.map((tool, i) => (
-                  <motion.div
-                    key={tool.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ 
-                      duration: 0.2,
-                      delay: Math.min(i, 20) * 0.03,
-                      layout: { type: "spring", stiffness: 300, damping: 30 }
-                    }}
+            activeCategory === "design" ? (
+              Object.entries(
+                filteredTools.reduce((acc, tool) => {
+                  const sub = (tool as any).subCategory || "核心工具";
+                  if (!acc[sub]) acc[sub] = [];
+                  acc[sub].push(tool);
+                  return acc;
+                }, {} as Record<string, typeof filteredTools>)
+              ).sort(([a], [b]) => {
+                const order = ['核心工具', '设计灵感', '设计资源', '设计社区'];
+                const iA = order.indexOf(a) === -1 ? 99 : order.indexOf(a);
+                const iB = order.indexOf(b) === -1 ? 99 : order.indexOf(b);
+                return iA - iB;
+              }).map(([subCategory, tools]) => (
+                <div key={subCategory} id={subCategory} className="mb-10 scroll-mt-24">
+                  {subCategory !== "核心工具" && (
+                    <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">{subCategory}</h3>
+                  )}
+                  <div 
+                    className={`grid gap-4 md:gap-6 ${
+                      viewMode === "grid"
+                        ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+                        : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+                    }`}
                   >
-                    <ToolCard tool={tool} viewMode={viewMode} index={i} />
-                  </motion.div>
+                    {tools.map((tool) => (
+                      <div key={tool.id}>
+                        <ToolCard tool={tool} viewMode={viewMode} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div 
+                className={`grid gap-4 md:gap-6 ${
+                  viewMode === "grid"
+                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+                    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+                }`}
+              >
+                {filteredTools.map((tool) => (
+                  <div key={tool.id}>
+                    <ToolCard tool={tool} viewMode={viewMode} />
+                  </div>
                 ))}
-              </AnimatePresence>
             </div>
+            )
           ) : (
             <div className="flex flex-col items-center justify-center h-64 text-slate-400 dark:text-slate-500">
               <p className="text-lg">未找到匹配的工具</p>

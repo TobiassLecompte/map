@@ -15,8 +15,6 @@ export function DotPatternBackground() {
     let animationFrameId: number;
     let width = 0;
     let height = 0;
-    let isAnimating = false;
-    let needsRender = true;
 
     // 配置项
     const dotRadius = 1;
@@ -30,7 +28,6 @@ export function DotPatternBackground() {
     let dots: { x: number; y: number; originX: number; originY: number }[] = [];
     let mouseX = -1000;
     let mouseY = -1000;
-    let isMouseInside = false;
 
     const initDots = () => {
       dots = [];
@@ -59,47 +56,32 @@ export function DotPatternBackground() {
         ctx.scale(dpr, dpr);
         
         initDots();
-        needsRender = true;
-        startAnimation();
       }
     };
+
+    window.addEventListener("resize", resize);
+    resize();
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-      isMouseInside = true;
-      needsRender = true;
-      startAnimation();
     };
 
     const handleMouseLeave = () => {
       mouseX = -1000;
       mouseY = -1000;
-      isMouseInside = false;
-      needsRender = true;
     };
 
-    function startAnimation() {
-      if (!isAnimating) {
-        isAnimating = true;
-        render();
-      }
-    }
-
-    window.addEventListener("resize", resize);
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseout", handleMouseLeave);
-    resize();
 
-    function render() {
+    const render = () => {
       ctx.clearRect(0, 0, width, height);
 
       const isDark = document.documentElement.classList.contains("dark");
       // 浅色模式下跟随主题强调色（靛蓝），深色模式下为纯白
       const baseColor = isDark ? "255, 255, 255" : "99, 102, 241"; 
-
-      let anyMoving = false;
 
       for (let i = 0; i < dots.length; i++) {
         const dot = dots[i];
@@ -128,28 +110,16 @@ export function DotPatternBackground() {
         dot.x += (targetX - dot.x) * returnSpeed;
         dot.y += (targetY - dot.y) * returnSpeed;
 
-        // Check if dot is still moving (threshold for stopping)
-        const distFromTarget = Math.abs(dot.x - targetX) + Math.abs(dot.y - targetY);
-        if (distFromTarget > 0.1) {
-          anyMoving = true;
-        }
-
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${baseColor}, ${opacity})`;
         ctx.fill();
       }
 
-      // Only continue animating if dots are still moving or mouse is inside
-      if (anyMoving || isMouseInside) {
-        animationFrameId = requestAnimationFrame(render);
-      } else {
-        isAnimating = false;
-      }
-    }
+      animationFrameId = requestAnimationFrame(render);
+    };
 
-    // Initial static render
-    startAnimation();
+    render();
 
     return () => {
       window.removeEventListener("resize", resize);
