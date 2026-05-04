@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Moon, Sun, LayoutGrid, List, Menu } from "lucide-react";
+import { Search, Moon, Sun, LayoutGrid, List, Menu, Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
 import data from "@/data/tools.json";
 
@@ -10,6 +10,8 @@ interface HeaderProps {
   viewMode: "grid" | "compact";
   onViewModeChange: (mode: "grid" | "compact") => void;
   onMenuToggle?: () => void;
+  isEditing?: boolean;
+  onEditToggle?: () => void;
 }
 
 export function Header({ 
@@ -17,7 +19,9 @@ export function Header({
   onSearchChange, 
   viewMode, 
   onViewModeChange,
-  onMenuToggle 
+  onMenuToggle,
+  isEditing,
+  onEditToggle,
 }: HeaderProps) {
   const [isDark, setIsDark] = useState(false);
   const totalCount = data.tools.length;
@@ -73,6 +77,20 @@ export function Header({
       </div>
 
       <div className="flex items-center gap-2 md:gap-3 shrink-0">
+        {/* Edit Mode Toggle */}
+        <button
+          onClick={onEditToggle}
+          className={`w-10 h-10 flex items-center justify-center rounded-xl backdrop-blur-sm shadow-sm border transition-all ${
+            isEditing
+              ? "bg-indigo-500 text-white border-indigo-500 shadow-indigo-500/30 hover:bg-indigo-600"
+              : "bg-white/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-md"
+          }`}
+          aria-label="Toggle edit mode"
+          title={isEditing ? "退出编辑模式" : "进入编辑模式"}
+        >
+          <Pencil size={18} />
+        </button>
+
         <button
           onClick={() => onViewModeChange(viewMode === "grid" ? "compact" : "grid")}
           className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all"
@@ -92,3 +110,4 @@ export function Header({
     </header>
   );
 }
+

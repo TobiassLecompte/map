@@ -63,3 +63,25 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* Edit mode card wiggle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-0.5deg); }
+  75% { transform: rotate(0.5deg); }
+}
+
+.edit-mode-card {
+  animation: wiggle 0.3s ease-in-out infinite;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px -3px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Stagger the wiggle so cards don't move in perfect sync */
+.edit-mode-card:nth-child(even) {
+  animation-delay: 0.15s;
+}
+.edit-mode-card:nth-child(3n) {
+  animation-delay: 0.08s;
+  animation-direction: reverse;
+}

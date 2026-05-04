@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const repoName = '/map'; 
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // output: 'export',
   images: {
     unoptimized: true,
   },

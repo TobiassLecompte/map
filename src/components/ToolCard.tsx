@@ -3,18 +3,22 @@
 import { ExternalLink } from "lucide-react";
 import { Icon } from "@iconify/react";
 
-interface Tool {
+export interface Tool {
   id: string;
   name: string;
   description: string;
   categoryId: string;
   url: string;
   icon: string;
+  subCategory?: string;
+  isFavorite?: boolean;
 }
 
 interface ToolCardProps {
   tool: Tool;
   viewMode?: "grid" | "compact";
+  isEditing?: boolean;
+  onDelete?: (id: string) => void;
 }
 
 // Map local icon strings to Iconify icon names for better logos
@@ -189,8 +193,17 @@ const iconMap: Record<string, string> = {
   "webclipper": "ph:scissors-duotone",
 };
 
-export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
-  const iconName = iconMap[tool.icon] || "logos:javascript";
+export function ToolCard({ tool, viewMode = "grid", isEditing, onDelete }: ToolCardProps) {
+  const isUrlIcon = tool.icon?.startsWith('http');
+  const iconifyName = !isUrlIcon ? (iconMap[tool.icon] || "logos:javascript") : "";
+
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (window.confirm('确定要从工具箱中移除该项吗？')) {
+      onDelete?.(tool.id);
+    }
+  };
 
   return (
     <a
@@ -199,21 +212,52 @@ export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
       rel="noopener noreferrer"
       className={`group relative bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-indigo-500/30 dark:hover:border-indigo-400/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 flex overflow-hidden ${
         viewMode === "compact" ? "p-4 items-center gap-4" : "p-5 flex-col block"
-      }`}
+      } ${isEditing ? "edit-mode-card pointer-events-none" : ""}`}
     >
-      <div className={`absolute right-4 opacity-0 group-hover:opacity-100 transform transition-all duration-300 text-indigo-500 z-10 ${
-        viewMode === "compact" 
-          ? "top-1/2 -translate-y-1/2 translate-x-2 group-hover:translate-x-0" 
-          : "top-4 translate-x-2 group-hover:translate-x-0"
-      }`}>
-        <ExternalLink size={18} />
-      </div>
+      {!isEditing && (
+        <div className={`absolute right-4 opacity-0 group-hover:opacity-100 transform transition-all duration-300 text-indigo-500 z-10 ${
+          viewMode === "compact" 
+            ? "top-1/2 -translate-y-1/2 translate-x-2 group-hover:translate-x-0" 
+            : "top-4 translate-x-2 group-hover:translate-x-0"
+        }`}>
+          <ExternalLink size={18} />
+        </div>
+      )}
+
+      {isEditing && (
+        <button
+          onClick={handleDeleteClick}
+          className={`absolute z-20 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 bg-white dark:bg-slate-800 rounded-full shadow-md hover:scale-110 transition-transform ${
+            viewMode === "compact" ? "right-3 top-1/2 -translate-y-1/2" : "right-3 top-3"
+          } pointer-events-auto`}
+          title="删除"
+        >
+          <Icon icon="mingcute:close-circle-fill" width="24" height="24" />
+        </button>
+      )}
       
       <div className={`${viewMode === "compact" ? "" : "flex items-start justify-between mb-4"}`}>
         <div 
-          className={`${viewMode === "compact" ? "w-10 h-10 text-xl" : "w-12 h-12 text-2xl"} rounded-xl bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center border border-slate-100 dark:border-slate-700/50 group-hover:scale-110 transition-transform duration-300 ease-out flex-shrink-0`}
+          className={`${viewMode === "compact" ? "w-10 h-10 text-xl" : "w-12 h-12 text-2xl"} rounded-xl bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center border border-slate-100 dark:border-slate-700/50 group-hover:scale-110 transition-transform duration-300 ease-out flex-shrink-0 overflow-hidden`}
         >
-          <Icon icon={iconName} />
+          {isUrlIcon ? (
+            <img 
+              src={tool.icon} 
+              alt={tool.name} 
+              className="w-7 h-7 object-contain"
+              onError={(e) => {
+                // Fallback: replace broken image with a text initial
+                const target = e.currentTarget;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  parent.innerHTML = `<span class="text-lg font-bold text-slate-400">${tool.name.charAt(0).toUpperCase()}</span>`;
+                }
+              }}
+            />
+          ) : (
+            <Icon icon={iconifyName} />
+          )}
         </div>
       </div>
       
@@ -223,7 +267,7 @@ export function ToolCard({ tool, viewMode = "grid" }: ToolCardProps) {
         </h3>
         {viewMode !== "compact" && (
           <p className="text-sm text-slate-500 dark:text-slate-400 truncate leading-relaxed mt-1 transition-opacity duration-300">
-            {tool.description}
+            {tool.description || tool.url}
           </p>
         )}
       </div>
