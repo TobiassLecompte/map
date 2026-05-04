@@ -3,12 +3,12 @@
     {
       "id": "design",
       "name": "设计工具",
-      "count": 104
+      "count": 138
     },
     {
       "id": "dev",
       "name": "开发工具",
-      "count": 16
+      "count": 20
     },
     {
       "id": "ai",
@@ -18,7 +18,7 @@
     {
       "id": "productivity",
       "name": "生产力",
-      "count": 12
+      "count": 20
     }
   ],
   "tools": [
@@ -29,7 +29,8 @@
       "categoryId": "design",
       "url": "https://figma.com",
       "icon": "figma",
-      "subCategory": "核心工具"
+      "subCategory": "核心工具",
+      "isFavorite": true
     },
     {
       "id": "2",
@@ -871,7 +872,8 @@
       "categoryId": "design",
       "url": "https://lucide.dev",
       "icon": "lucide",
-      "subCategory": "设计资源"
+      "subCategory": "设计资源",
+      "isFavorite": true
     },
     {
       "id": "100",
@@ -1096,7 +1098,8 @@
       "categoryId": "design",
       "url": "https://tinypng.com",
       "icon": "tinypng",
-      "subCategory": "设计资源"
+      "subCategory": "设计资源",
+      "isFavorite": true
     },
     {
       "id": "125",
@@ -1277,6 +1280,422 @@
       "url": "https://www.xiaohongshu.com",
       "icon": "xiaohongshu",
       "subCategory": "设计社区"
+    },
+    {
+      "id": "145",
+      "name": "Asorn",
+      "description": "个人博客设计作品",
+      "categoryId": "design",
+      "url": "https://asorn.cn",
+      "icon": "asorn",
+      "subCategory": "核心工具"
+    },
+    {
+      "id": "146",
+      "name": "Biliui",
+      "description": "设计博客",
+      "categoryId": "design",
+      "url": "https://biliui.com",
+      "icon": "biliui",
+      "subCategory": "核心工具"
+    },
+    {
+      "id": "147",
+      "name": "PxCook for Figma",
+      "description": "PxCook Figma 插件",
+      "categoryId": "design",
+      "url": "https://larkmap.com/#",
+      "icon": "figma",
+      "subCategory": "核心工具"
+    },
+    {
+      "id": "148",
+      "name": "RPB",
+      "description": "Figma 替换页面背景色插件",
+      "categoryId": "design",
+      "url": "https://www.figma.com/community/plugin/1286263811056993042/replace-page-background",
+      "icon": "figma",
+      "subCategory": "核心工具"
+    },
+    {
+      "id": "149",
+      "name": "Figicon",
+      "description": "QingIcon Figma 插件",
+      "categoryId": "design",
+      "url": "https://www.figma.com/community/plugin/1111565622161029659/figicon",
+      "icon": "figma",
+      "subCategory": "核心工具"
+    },
+    {
+      "id": "150",
+      "name": "Neoline",
+      "description": "未来科技感插画库",
+      "categoryId": "design",
+      "url": "https://svg.cool",
+      "icon": "svgcool",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "151",
+      "name": "Q-Adapter",
+      "description": "B 端页面模版总结",
+      "categoryId": "design",
+      "url": "https://adapter.biliui.com",
+      "icon": "biliui",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "152",
+      "name": "Linear Buttons",
+      "description": "开源精美按钮库",
+      "categoryId": "design",
+      "url": "https://btn.biliui.com",
+      "icon": "biliui",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "153",
+      "name": "Logo Show",
+      "description": "Logo 粒子特效",
+      "categoryId": "design",
+      "url": "https://logoshow.biliui.com",
+      "icon": "biliui",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "154",
+      "name": "IK Gallery",
+      "description": "运动学 Web 特效实验室",
+      "categoryId": "design",
+      "url": "https://ikgallery.biliui.com",
+      "icon": "biliui",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "155",
+      "name": "imagesTool",
+      "description": "免费批量图片文件处理",
+      "categoryId": "design",
+      "url": "https://tiny.imagestool.com/zh-CN",
+      "icon": "imagestool",
+      "subCategory": "设计资源",
+      "isFavorite": true
+    },
+    {
+      "id": "156",
+      "name": "iSparta",
+      "description": "图像转 APNG、WebP 格式",
+      "categoryId": "design",
+      "url": "http://isparta.github.io",
+      "icon": "isparta",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "157",
+      "name": "Gifski",
+      "description": "视频转 Gif 工具",
+      "categoryId": "design",
+      "url": "https://gif.ski",
+      "icon": "gifski",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "158",
+      "name": "LICEcap",
+      "description": "Gif 录制软件",
+      "categoryId": "design",
+      "url": "https://www.cockos.com/licecap",
+      "icon": "licecap",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "159",
+      "name": "PhotoBulk",
+      "description": "Mac 图像批量编辑器",
+      "categoryId": "design",
+      "url": "https://mac.eltima.com/bulk-image-editor.html",
+      "icon": "eltima",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "160",
+      "name": "Filter Forge",
+      "description": "滤镜、纹理图形处理",
+      "categoryId": "design",
+      "url": "https://www.filterforge.com",
+      "icon": "filterforge",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "161",
+      "name": "佐糖",
+      "description": "在线图片处理",
+      "categoryId": "design",
+      "url": "https://picwish.cn",
+      "icon": "picwish",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "162",
+      "name": "Inboxflows",
+      "description": "Html 邮件模版参考",
+      "categoryId": "design",
+      "url": "https://inboxflows.com",
+      "icon": "inboxflows",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "163",
+      "name": "深言达意",
+      "description": "找词找句",
+      "categoryId": "design",
+      "url": "https://www.shenyandayi.com",
+      "icon": "shenyandayi",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "164",
+      "name": "比特虫",
+      "description": "制作 favicon",
+      "categoryId": "design",
+      "url": "https://www.bitbug.net",
+      "icon": "bitbug",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "165",
+      "name": "Favicon Generator",
+      "description": "制作 favicon",
+      "categoryId": "design",
+      "url": "https://realfavicongenerator.net",
+      "icon": "realfavicongenerator",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "166",
+      "name": "SVG Factory",
+      "description": "批量 svg 优化",
+      "categoryId": "design",
+      "url": "https://svg-factory.vercel.app",
+      "icon": "svgfactory",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "167",
+      "name": "Polarr",
+      "description": "为摄影师打造的修图工具",
+      "categoryId": "design",
+      "url": "https://www.polarr.com",
+      "icon": "polarr",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "168",
+      "name": "Edit Photo",
+      "description": "在线图片处理",
+      "categoryId": "design",
+      "url": "https://edit.photo",
+      "icon": "editphoto",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "169",
+      "name": "Screen Studio",
+      "description": "macOS 录屏工具",
+      "categoryId": "design",
+      "url": "https://www.screen.studio",
+      "icon": "screenstudio",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "170",
+      "name": "Cap",
+      "description": "开源录屏工具",
+      "categoryId": "design",
+      "url": "https://cap.so",
+      "icon": "cap",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "171",
+      "name": "Recordly",
+      "description": "开源录屏工具",
+      "categoryId": "design",
+      "url": "https://recordly.dev",
+      "icon": "recordly",
+      "subCategory": "设计资源"
+    },
+    {
+      "id": "172",
+      "name": "致远斋",
+      "description": "中华古籍影印典藏",
+      "categoryId": "design",
+      "url": "https://zyz.biliui.com",
+      "icon": "biliui",
+      "subCategory": "设计灵感"
+    },
+    {
+      "id": "173",
+      "name": "Webcap",
+      "description": "浏览器 DOM 级截图工具",
+      "categoryId": "design",
+      "url": "https://github.com/asorn/webcap",
+      "icon": "github",
+      "subCategory": "设计灵感"
+    },
+    {
+      "id": "174",
+      "name": "语雀",
+      "description": "新一代云端知识库",
+      "categoryId": "design",
+      "url": "https://www.yuque.com",
+      "icon": "yuque",
+      "subCategory": "设计社区",
+      "isFavorite": true
+    },
+    {
+      "id": "175",
+      "name": "TimeCat",
+      "description": "在浏览器中录制交互式视频",
+      "categoryId": "productivity",
+      "url": "https://timecatjs.com",
+      "icon": "timecat",
+      "isFavorite": true
+    },
+    {
+      "id": "176",
+      "name": "表格转换",
+      "description": "在线表格转换工具",
+      "categoryId": "productivity",
+      "url": "https://tableconvert.com/zh-cn",
+      "icon": "tableconvert"
+    },
+    {
+      "id": "177",
+      "name": "YouMeMark",
+      "description": "构建并分享你的书签",
+      "categoryId": "productivity",
+      "url": "https://larkmap.com/#",
+      "icon": "youmemark"
+    },
+    {
+      "id": "178",
+      "name": "Linktree",
+      "description": "构建多链接聚合工具",
+      "categoryId": "productivity",
+      "url": "https://linktr.ee",
+      "icon": "linktree"
+    },
+    {
+      "id": "179",
+      "name": "Web Clipper",
+      "description": "将网页剪藏为文本保存",
+      "categoryId": "productivity",
+      "url": "https://clipper.website",
+      "icon": "webclipper"
+    },
+    {
+      "id": "180",
+      "name": "百度识图",
+      "description": "鉴你所见，以图搜图",
+      "categoryId": "design",
+      "url": "https://image.baidu.com",
+      "icon": "baidu",
+      "subCategory": "设计资源",
+      "isFavorite": true
+    },
+    {
+      "id": "181",
+      "name": "Caps To Lowercase",
+      "description": "轻工具大全",
+      "categoryId": "productivity",
+      "url": "https://www.capstolowercase.com",
+      "icon": "capstolowercase",
+      "isFavorite": true
+    },
+    {
+      "id": "182",
+      "name": "微信公众平台",
+      "description": "微信公众号",
+      "categoryId": "productivity",
+      "url": "https://mp.weixin.qq.com",
+      "icon": "wechat",
+      "isFavorite": true
+    },
+    {
+      "id": "183",
+      "name": "Iconfont",
+      "description": "阿里巴巴矢量图标库",
+      "categoryId": "design",
+      "url": "https://www.iconfont.cn/home/index",
+      "icon": "iconfont",
+      "subCategory": "设计资源",
+      "isFavorite": true
+    },
+    {
+      "id": "184",
+      "name": "Remix Icon",
+      "description": "开源精品图标库",
+      "categoryId": "design",
+      "url": "https://remixicon.com",
+      "icon": "remixicon",
+      "subCategory": "设计资源",
+      "isFavorite": true
+    },
+    {
+      "id": "185",
+      "name": "QingIcon",
+      "description": "青云开源图标库",
+      "categoryId": "design",
+      "url": "https://qingicon.com",
+      "icon": "qingicon",
+      "subCategory": "设计资源",
+      "isFavorite": true
+    },
+    {
+      "id": "186",
+      "name": "万网",
+      "description": "阿里云域名注册",
+      "categoryId": "dev",
+      "url": "https://wanwang.aliyun.com",
+      "icon": "aliyun",
+      "isFavorite": true
+    },
+    {
+      "id": "187",
+      "name": "百度统计",
+      "description": "百度中文网站流量分析平台",
+      "categoryId": "dev",
+      "url": "https://tongji.baidu.com/web/welcome/basic",
+      "icon": "baidu",
+      "isFavorite": true
+    },
+    {
+      "id": "188",
+      "name": "浩客",
+      "description": "网站用户体验分析平台",
+      "categoryId": "dev",
+      "url": "https://howxm.com",
+      "icon": "howxm",
+      "isFavorite": true
+    },
+    {
+      "id": "189",
+      "name": "阿里云",
+      "description": "上云就上阿里云",
+      "categoryId": "dev",
+      "url": "https://cn.aliyun.com",
+      "icon": "aliyun",
+      "isFavorite": true
+    },
+    {
+      "id": "190",
+      "name": "百度翻译",
+      "description": "多语种在线即时翻译",
+      "categoryId": "productivity",
+      "url": "https://fanyi.baidu.com",
+      "icon": "baidu",
+      "isFavorite": true
     }
   ]
 }

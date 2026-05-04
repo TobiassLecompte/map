@@ -64,7 +64,7 @@ export default function Home() {
                 }`}
               >
                   {data.tools
-                    .filter((tool) => ["figma", "notion", "colorhexa"].includes(tool.name.toLowerCase()))
+                    .filter((tool) => (tool as any).isFavorite)
                     .map((tool) => (
                       <div key={`fav-${tool.id}`}>
                         <ToolCard tool={tool} viewMode={viewMode} />
