@@ -1,4 +1,6 @@
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge'; // 强制使用边缘运行时
+
 
 export async function OPTIONS(request: Request) {
   return new Response(null, {
